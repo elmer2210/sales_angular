@@ -1,0 +1,32 @@
+
+<div class="container">
+    <h5>Bienvenido a la Página de Clientes</h5>
+    <hr>
+    <a href="customers/add">Crear Nuevo Cliente</a>
+    <br>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col"># Telefono</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Código Postal</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let customers of customers, let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{customers.c_first_name}}</td>
+            <td>{{customers.c_last_name}}</td>
+            <td>{{customers.c_phone}}</td>
+            <td>{{customers.c_street}}</td>
+            <td>{{customers.c_zip_code}}</td>
+            <td>
+                <a [routerLink]="['update', customers._id]" class="btn btn-primary">Actualizar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
